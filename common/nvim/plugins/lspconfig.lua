@@ -52,6 +52,14 @@ lspconfig.metals.setup {
 	capabilities = capabilities,
 }
 
+--Enable (broadcasting) snippet capability for completion
+local cap = vim.lsp.protocol.make_client_capabilities()
+cap.textDocument.completion.completionItem.snippetSupport = true
+lspconfig.cssls.setup {
+  capabilities = cap,
+	cmd = { "css-languageserver", "--stdio" }
+}
+
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

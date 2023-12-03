@@ -173,6 +173,7 @@
 		gnumake
 		thunderbird
 		feh
+		# nodePackages_latest.vscode-css-languageserver-bin
   ];
 
 	fonts.packages = with pkgs; [

@@ -18,9 +18,12 @@
 
 		plugins = with pkgs.vimPlugins; [
 			{
+				plugin = oil-nvim;
+				config = toLuaFile ./nvim/plugins/oil.lua;
+			}
+			{
 				plugin = which-key-nvim;
 				config = toLuaFile ./nvim/plugins/which-key.lua;
-				# config = toLuaFile /home/stefan/.setup/nvim/plugins/which-key.lua;
 			}
 			{
 				plugin = nvim-autopairs;
@@ -110,6 +113,7 @@
 			lua-language-server
 			nil
 			nodePackages.typescript-language-server
+			nodePackages_latest.vscode-css-languageserver-bin
 			nodePackages.volar
 			jdt-language-server
 			metals
