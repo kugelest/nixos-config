@@ -80,6 +80,7 @@
 					p.tree-sitter-scala
 					p.tree-sitter-python
 					p.tree-sitter-bash
+					p.tree-sitter-c
 					p.tree-sitter-make
 					p.tree-sitter-markdown
 					p.tree-sitter-dockerfile
@@ -119,6 +120,10 @@
 			metals
 		];
 	};
+
+	home.sessionPath = [
+		"$HOME/.npm-global"
+  ];
 
 
 	programs.zsh = {
@@ -356,6 +361,7 @@
 			merge.tool = "vimdiff";
 			difftool.prompt = false;
 			safe.directory = "/etc/nixos";
+			core.autocrlf = "input";
 		};
   };
 
