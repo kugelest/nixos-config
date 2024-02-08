@@ -443,6 +443,20 @@
 		};
 	};
 
+	xdg.userDirs = {
+		enable = true;
+		createDirectories = true;
+		download = "${config.home.homeDirectory}/downloads";
+		desktop = "${config.home.homeDirectory}/desktop";
+		documents = "${config.home.homeDirectory}/desktop";
+		# extraConfig = "${config.home.homeDirectory}/desktop";
+		music = "${config.home.homeDirectory}/desktop";
+		pictures = "${config.home.homeDirectory}/desktop";
+		publicShare = "${config.home.homeDirectory}/desktop";
+		templates = "${config.home.homeDirectory}/desktop";
+		videos = "${config.home.homeDirectory}/desktop";
+	};
+
 	# xdg.mimeApps = {
 	# 	enable = true;
 		# defaultApplications = {
@@ -488,6 +502,16 @@
 			pkgs.vscode-extensions.ms-vscode-remote.remote-ssh
 		];
 	};
+
+
+
+	dconf.settings = {
+		"org/virt-manager/virt-manager/connections" = {
+			autoconnect = ["qemu:///system"];
+			uris = ["qemu:///system"];
+		};
+	};
+
 
   home.packages = [];
   home.file = {};

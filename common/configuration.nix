@@ -133,10 +133,7 @@
   users.users.stefan = {
     isNormalUser = true;
     description = "Stefan";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+    extraGroups = [ "libvirt" "networkmanager" "wheel" "docker" ];
   };
 
 
@@ -147,6 +144,9 @@
 		man-pages-posix
 		docker-compose
 		firefox
+		chromium
+		libreoffice
+		openvpn3
 		wl-clipboard
 		xclip
 		syncthing
@@ -201,6 +201,16 @@
 	users.defaultUserShell = pkgs.zsh;
 	environment.shells = with pkgs; [ zsh ];
 
+	# services.openvpn.servers = {
+ #    HTWG  = {
+	# 		config = '' config /home/stefan/studium/_vpn/HTWG-MFA-WS2324.ovpn '';
+	# 		authUserPass = {
+	# 			username = "st391kug";
+	# 			password = "";
+	# 		};
+		# };
+  # };
+
 
 	programs.htop = {
 		enable = true;
@@ -209,6 +219,13 @@
 	virtualisation.docker.enable = true;
 
 	# virtualisation.docker.enable = true;
+
+
+
+	virtualisation.libvirtd.enable = true;
+	programs.virt-manager.enable = true;
+
+
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
