@@ -2,12 +2,11 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, ... }:
-
+{ pkgs, lib, systemSettings, userSettings, ... }:
 {
-  # imports = [ # Include the results of the hardware scan.
-  #   ./hardware-configuration.nix
-  # ];
+  imports = [
+		../../system/hardware-configuration.nix
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -18,7 +17,7 @@
   networking = {
   	# hostName = "nixos";
   	# hostName = hostName;
-  	hostName = "desktop";
+  	hostName = systemSettings.hostname;
 		enableIPv6 = true;
 		networkmanager = {
 			enable = true;
@@ -29,9 +28,9 @@
 			# enable = true;
 			# networks."eduroam".psk = "<psk>";
 		# };
-		extraHosts = ''
-			139.144.183.163 server
-		'';
+		# extraHosts = ''
+		# 	139.144.183.163 server
+		# '';
 		firewall.enable = false;
 	};
 
@@ -40,20 +39,20 @@
 	'';
 
   # Set your time zone.
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = systemSettings.timezone;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
+    LC_ADDRESS = systemSettings.locale;
+    LC_IDENTIFICATION = systemSettings.locale;
+    LC_MEASUREMENT = systemSettings.locale;
+    LC_MONETARY = systemSettings.locale;
+    LC_NAME = systemSettings.locale;
+    LC_NUMERIC = systemSettings.locale;
+    LC_PAPER = systemSettings.locale;
+    LC_TELEPHONE = systemSettings.locale;
+    LC_TIME = systemSettings.locale;
   };
 
   # Enable the X11 windowing system.
@@ -64,17 +63,16 @@
   services.xserver.desktopManager.gnome.enable = true;
 	environment.gnome.excludePackages = (with pkgs; [
 		gnome-tour
-	]) ++ (with pkgs.gnome; [
 	]);
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "de";
+    layout = systemSettings.keymap;
     xkbVariant = "";
   };
 
   # Configure console keymap
-  console.keyMap = "de";
+  console.keyMap = systemSettings.keymap;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -130,9 +128,9 @@
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.stefan = {
+	users.users.${userSettings.username} = {
     isNormalUser = true;
-    description = "Stefan";
+    description = userSettings.name;
     extraGroups = [ "libvirt" "networkmanager" "wheel" "docker" ];
   };
 
@@ -218,27 +216,9 @@
 
 	virtualisation.docker.enable = true;
 
-	# virtualisation.docker.enable = true;
-
-
-
 	virtualisation.libvirtd.enable = true;
 	programs.virt-manager.enable = true;
 
-
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
 
 }

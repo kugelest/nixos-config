@@ -1,125 +1,16 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
-	home.username = "stefan";
-  home.homeDirectory = "/home/stefan";
+	home.username = userSettings.username;
+  home.homeDirectory = "/home/"+userSettings.username;
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  programs.neovim =
-	let
-		toLua = str: "lua << EOF\n${str}\nEOF\n";
-		toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
-	in
-	{
-		enable = true;
-		defaultEditor = true;
-		vimAlias = true;
-		vimdiffAlias = true;
+	programs.home-manager.enable = true;
 
-		plugins = with pkgs.vimPlugins; [
-			{
-				plugin = oil-nvim;
-				config = toLuaFile ./nvim/plugins/oil.lua;
-			}
-			{
-				plugin = which-key-nvim;
-				config = toLuaFile ./nvim/plugins/which-key.lua;
-			}
-			{
-				plugin = nvim-autopairs;
-				config = toLuaFile ./nvim/plugins/autopairs.lua;
-			}
-			{
-				plugin = comment-nvim;
-				config = toLuaFile ./nvim/plugins/comment.lua;
-			}
-			{
-				plugin = indent-blankline-nvim;
-				config = toLuaFile ./nvim/plugins/indent-blankline.lua;
+	imports = [
+		../../user/neovim/nvim.nix
+	];
 
-			}
-			{
-				plugin = nvim-lspconfig;
-				config = toLuaFile ./nvim/plugins/lspconfig.lua;
-			}
-			{
-				plugin = lualine-nvim;
-				config = toLuaFile ./nvim/plugins/lualine.lua;
-			}
-			{
-				plugin = nvim-navic;
-				config = toLuaFile ./nvim/plugins/navic.lua;
-			}
-			{
-				plugin = nvim-cmp;
-				config = toLuaFile ./nvim/plugins/cmp.lua;
-			}
-			{
-				plugin = nvim-surround;
-				config = toLuaFile ./nvim/plugins/surround.lua;
-			}
-			{
-				plugin = telescope-nvim;
-				config = toLuaFile ./nvim/plugins/telescope.lua;
-			}
-			# {
-			# 	plugin = nvim-jdtls;
-			# 	config = toLuaFile /home/stefan/.setup/nvim/plugins/jdtls.lua;
-			# }
-			{
-				plugin = (nvim-treesitter.withPlugins (p: [
-					p.tree-sitter-nix
-					p.tree-sitter-lua
-					p.tree-sitter-html
-					p.tree-sitter-css
-					p.tree-sitter-typescript
-					p.tree-sitter-javascript
-					p.tree-sitter-json
-					p.tree-sitter-vue
-					p.tree-sitter-java
-					p.tree-sitter-scala
-					p.tree-sitter-python
-					p.tree-sitter-bash
-					p.tree-sitter-c
-					p.tree-sitter-make
-					p.tree-sitter-markdown
-					p.tree-sitter-dockerfile
-				]));
-				config = toLuaFile ./nvim/plugins/treesitter.lua;
-			}
-			{
-				plugin = nvim-treesitter-context;
-				config = toLuaFile ./nvim/plugins/treesitter-context.lua;
-			}
-			nvim-treesitter-textobjects
-			vim-repeat
-			gitsigns-nvim
-			tokyonight-nvim
-			luasnip
-			cmp_luasnip
-			cmp-nvim-lsp
-			cmp-path
-			cmp-cmdline
-			cmp-buffer
-		];
-
-		extraLuaConfig = ''
-			vim.cmd[[colorscheme tokyonight-moon]]
-			${builtins.readFile ./nvim/options.lua}
-			${builtins.readFile ./nvim/keymaps.lua}
-			${builtins.readFile ./nvim/autocmds.lua}
-		'';
-
-		extraPackages = with pkgs; [
-			lua-language-server
-			nil
-			nodePackages.typescript-language-server
-			nodePackages_latest.vscode-css-languageserver-bin
-			nodePackages.volar
-			jdt-language-server
-			metals
-		];
-	};
 
 	home.sessionPath = [
 		"$HOME/.npm-global"
@@ -516,5 +407,4 @@
   home.packages = [];
   home.file = {};
   home.sessionVariables = {};
-  programs.home-manager.enable = true;
 }
