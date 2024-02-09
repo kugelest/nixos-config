@@ -394,8 +394,6 @@
 		];
 	};
 
-
-
 	dconf.settings = {
 		"org/virt-manager/virt-manager/connections" = {
 			autoconnect = ["qemu:///system"];
@@ -403,8 +401,7 @@
 		};
 	};
 
-
-  home.packages = [];
-  home.file = {};
-  home.sessionVariables = {};
+	home.packages = [];
+	home.file = {};
+	home.sessionVariables = {};
 }

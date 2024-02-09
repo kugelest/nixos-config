@@ -131,7 +131,7 @@
 	users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "libvirt" "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "libvirtd" "networkmanager" "wheel" "docker" ];
   };
 
 
