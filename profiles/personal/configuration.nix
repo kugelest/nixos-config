@@ -123,7 +123,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    #jack.enable = true;
+    jack.enable = true;
     #media-session.enable = true;
   };
 
@@ -148,7 +148,11 @@
 		wl-clipboard
 		xclip
 		syncthing
+		vcv-rack
+		usbutils
+		alsa-utils
 		unzip
+		carla
     vim
 		# python39
 		# brave
