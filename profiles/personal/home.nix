@@ -22,7 +22,7 @@
 		dotDir = ".config/zsh";
 		defaultKeymap = "emacs";
 		autocd = true;
-		enableAutosuggestions = true;
+		autosuggestion.enable = true;
 		syntaxHighlighting.enable = true;
 		enableCompletion = true;
 		history = {
