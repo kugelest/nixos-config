@@ -113,26 +113,34 @@
 	# 	};
 	# };
 
+	hardware.pulseaudio.enable = true;
+	hardware.pulseaudio.support32Bit = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-    #media-session.enable = true;
-  };
+  # sound.enable = true;
+  # hardware.pulseaudio.enable = false;
+  # security.rtkit.enable = true;
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  #   # jack.enable = true;
+  #   wireplumber.enable = true;
+  # };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "libvirtd" "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "sound" "libvirtd" "networkmanager" "wheel" "docker" ];
   };
+
+	programs.steam = {
+  	enable = true;
+		# remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+		# dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+	};
 
 
   # List packages installed in system profile. To search, run:
@@ -152,8 +160,10 @@
 		usbutils
 		alsa-utils
 		unzip
-		carla
     vim
+		reaper
+		yabridge
+		yabridgectl
 		# python39
 		# brave
 		gcc
@@ -161,6 +171,7 @@
 		# nodejs_20
 		fzf
 		kitty
+		gh
 		gnupg
 		git
 		pass

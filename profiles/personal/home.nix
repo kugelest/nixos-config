@@ -164,7 +164,8 @@
 
 	programs.kitty = {
 		enable = true;
-		theme = "Alien Blood";
+		# theme = "Alien Blood";
+		theme = "Belafonte Day";
 		font = {
 			# name = "MesloLGS NF";
 			# name = "FiraCode Nerd Font Mono";
@@ -403,5 +404,5 @@
 
 	home.packages = [];
 	home.file = {};
-	home.sessionVariables = {};
+
 }
