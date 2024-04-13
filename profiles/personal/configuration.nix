@@ -173,7 +173,7 @@
 		# nodejs_20
 		fzf
 		kitty
-		gh
+		# gh
 		gnupg
 		git
 		pass

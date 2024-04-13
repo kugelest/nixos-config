@@ -360,6 +360,10 @@
 		};
   };
 
+	programs.gh = {
+		enable = true;
+	};
+
 	# programs.brave = {
 	# 	enable = true;
 	# 	extensions = [
