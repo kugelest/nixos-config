@@ -274,6 +274,9 @@
     # '';
   };
 
+	#Falls github zugriff nicht mehr geht:
+	#gpgconf --kill gpg-agen
+	#gpg-connect-agent updatestartuptty /bye
 	programs.git = {
     enable = true;
     userName  = "Stefan Kugele";
