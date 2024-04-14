@@ -241,6 +241,39 @@
 		};
 	};
 
+	  # programs.ssh =
+   #  {
+   #    extraConfig = ''
+   #      Match host * exec "gpg-connect-agent UPDATESTARTUPTTY /bye"
+   #    '';
+   #  };
+
+	programs.gpg = {
+    enable = true;
+  };
+
+  services.gpg-agent = {
+    enable = true;
+    enableExtraSocket = true;
+    enableSshSupport = true;
+		pinentryPackage = pkgs.pinentry-gtk2;
+		sshKeys = [
+			"8303DB27D1F5BCF26070AE79835FC0DB530C4C71"
+		];
+		enableZshIntegration = true;
+    defaultCacheTtl = 60 * 60 * 6;
+    defaultCacheTtlSsh = 60 * 60 * 6;
+    verbose = true;
+
+    # extraConfig = ''
+    #   debug-pinentry
+    #   debug-level 1024
+    #
+    #   # I don't use smart cards
+    #   disable-scdaemon
+    # '';
+  };
+
 	programs.git = {
     enable = true;
     userName  = "Stefan Kugele";
@@ -256,6 +289,21 @@
 			core.autocrlf = "input";
 		};
   };
+
+	# programs.gh = {
+	# 	enable = true;
+	# 	gitCredentialHelper = {
+	# 		enable = true;
+	# 		hosts = [
+	# 			"https://github.com"
+	# 			"https://gist.github.com"
+	# 		];
+	# 	};
+	# 	settings = {
+	# 		git_protocol = "ssh";
+	# 		prompt = "enabled";
+	# 	};
+	# };
 
 	programs.zoxide = {
 		enable = true;
@@ -360,10 +408,6 @@
 		};
   };
 
-	programs.gh = {
-		enable = true;
-	};
-
 	# programs.brave = {
 	# 	enable = true;
 	# 	extensions = [
@@ -372,25 +416,15 @@
 	# 	];
  #  };
 
-	services.gpg-agent = {
-		enable = true;
-		defaultCacheTtl = 36000;
-		defaultCacheTtlSsh = 36000;
-		enableSshSupport = true;
-		sshKeys = [
-			"8303DB27D1F5BCF26070AE79835FC0DB530C4C71"
-		];
-	};
-
-	programs.rofi = {
-		enable = true;
-		location = "center";
-		cycle = false;
-		theme = "purple";
-		extraConfig = {
-			show-icons = true;
-		};
-	};
+	# programs.rofi = {
+	# 	enable = true;
+	# 	location = "center";
+	# 	cycle = false;
+	# 	theme = "purple";
+	# 	extraConfig = {
+	# 		show-icons = true;
+	# 	};
+	# };
 
 	programs.vscode = {
 		enable = true;
@@ -405,8 +439,5 @@
 			uris = ["qemu:///system"];
 		};
 	};
-
-	home.packages = [];
-	home.file = {};
 
 }

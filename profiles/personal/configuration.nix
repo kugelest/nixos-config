@@ -174,8 +174,8 @@
 		fzf
 		kitty
 		# gh
-		gnupg
-		git
+		# gnupg
+		# git
 		pass
 		zoxide
 		eza
@@ -211,6 +211,13 @@
     gpg-connect-agent /bye
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   '';
+
+	# programs.gnupg = {
+	# 	agent = {
+	# 		enable = true;
+	# 		enableSSHSupport = true;
+	# 	};
+	# };
 
 	programs.zsh.enable = true;
 	users.defaultUserShell = pkgs.zsh;
