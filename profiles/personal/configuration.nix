@@ -156,6 +156,7 @@
 		libreoffice
 		openvpn3
 		wl-clipboard
+		oh-my-git
 		xclip
 		syncthing
 		vcv-rack
