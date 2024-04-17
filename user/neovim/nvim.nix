@@ -118,6 +118,7 @@
 			nodePackages.volar
 			jdt-language-server
 			metals
+			coursier
 		];
 	};
 }
