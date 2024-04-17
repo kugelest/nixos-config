@@ -117,6 +117,7 @@
 			nodePackages_latest.vscode-css-languageserver-bin
 			nodePackages.volar
 			jdt-language-server
+			metals
 		];
 	};
 }
