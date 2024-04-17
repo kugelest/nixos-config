@@ -2,7 +2,7 @@ local lspconfig = require('lspconfig')
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspconfig.jdtls.setup{
+lspconfig.jdtls.setup {
 	-- capabilities = capabilities,
 	cmd = { "jdt-language-server", "-configuration", "/home/stefan/.cache/jdtls/config", "-data", "/home/stefan/.cache/jdtls/workspace" },
 }
@@ -48,15 +48,15 @@ lspconfig.nil_ls.setup {
 	capabilities = capabilities,
 }
 
-lspconfig.metals.setup {
-	capabilities = capabilities,
-}
+-- lspconfig.metals.setup {
+-- 	capabilities = capabilities,
+-- }
 
 --Enable (broadcasting) snippet capability for completion
 local cap = vim.lsp.protocol.make_client_capabilities()
 cap.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.cssls.setup {
-  capabilities = cap,
+	capabilities = cap,
 	cmd = { "css-languageserver", "--stdio" }
 }
 
@@ -90,7 +90,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 		end, opts)
 		vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-		vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, vim.tbl_deep_extend("error", opts, {desc = "rename"} ))
+		vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, vim.tbl_deep_extend("error", opts, { desc = "rename" }))
 		vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
 		vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 		vim.keymap.set('n', '<space>p', function()
