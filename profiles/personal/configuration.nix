@@ -157,6 +157,7 @@
 		openvpn3
 		wl-clipboard
 		oh-my-git
+		calibre
 		xclip
 		syncthing
 		vcv-rack
