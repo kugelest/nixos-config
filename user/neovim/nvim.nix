@@ -32,7 +32,6 @@
 			{
 				plugin = indent-blankline-nvim;
 				config = toLuaFile ./plugins/indent-blankline.lua;
-
 			}
 			{
 				plugin = nvim-lspconfig;
@@ -101,6 +100,7 @@
 			cmp-path
 			cmp-cmdline
 			cmp-buffer
+			plenary-nvim
 		];
 
 		extraLuaConfig = ''
