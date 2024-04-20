@@ -3,8 +3,11 @@
 
   inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-		home-manager.url = "github:nix-community/home-manager";
-		home-manager.inputs.nixpkgs.follows = "nixpkgs";
+		home-manager = {
+			url = "github:nix-community/home-manager";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+		# helix.url = "github:helix-editor/helix/master";
   };
 
 
@@ -28,7 +31,8 @@
 	in {
 
 		nixosConfigurations.system = nixpkgs.lib.nixosSystem {
-			system = systemSettings.system;
+			# system = systemSettings.system;
+			"${systemSettings.hostname}" = systemSettings.system;
 			modules = [
 				(./. + "/profiles"+("/"+systemSettings.profile)+"/configuration.nix")
 				home-manager.nixosModules.home-manager {
@@ -43,6 +47,7 @@
           _module.args = {
 						inherit systemSettings;
 						inherit userSettings;
+						inherit inputs;
 					};
         }
 			];

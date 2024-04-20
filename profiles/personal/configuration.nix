@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, lib, systemSettings, userSettings, config, ... }:
+{ pkgs, lib, config, systemSettings, userSettings, inputs ... }:
 {
   imports = [
 		../../system/hardware-configuration.nix
@@ -156,6 +156,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+		# inputs.helix.packages."${pkgs.system}".helix
 		man-pages
 		man-pages-posix
 		docker-compose
