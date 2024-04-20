@@ -30,9 +30,9 @@
 
 	in {
 
-		nixosConfigurations.system = nixpkgs.lib.nixosSystem {
-			# system = systemSettings.system;
-			"${systemSettings.hostname}" = systemSettings.system;
+		# nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
+		nixosConfigurations."${systemSettings.hostname}" = nixpkgs.lib.nixosSystem {
+			system = systemSettings.system;
 			modules = [
 				(./. + "/profiles"+("/"+systemSettings.profile)+"/configuration.nix")
 				home-manager.nixosModules.home-manager {
