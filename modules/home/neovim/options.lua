@@ -3,6 +3,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 -- "foo-bar" should count as one word
 vim.opt.iskeyword:append("-")
+vim.opt_global.shortmess:remove("F")
 
 local options = {
 	autochdir = false,

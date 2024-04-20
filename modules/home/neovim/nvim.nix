@@ -67,10 +67,16 @@
 				type = "lua";
 				config = lib.readFile(plugin_path + "/telescope.lua");
 			}
-			# {
-			# 	plugin = nvim-metals;
-			# 	config = toLuaFile ./plugins/nvim-metals.lua;
-			# }
+			{
+				plugin = fidget-nvim;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/fidget.lua");
+			}
+			{
+				plugin = nvim-metals;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/nvim-metals.lua");
+			}
 			# {
 			# 	plugin = nvim-jdtls;
 			# 	config = toLuaFile /home/stefan/.setup/nvim/plugins/jdtls.lua;
@@ -113,7 +119,9 @@
 			nodePackages.volar
 			jdt-language-server
 			metals
-			# coursier
+			coursier
+			jdk17
+			bloop
 		];
 	};
 }

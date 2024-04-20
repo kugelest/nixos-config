@@ -48,9 +48,9 @@ lspconfig.nil_ls.setup {
 	capabilities = capabilities,
 }
 
-lspconfig.metals.setup {
-	capabilities = capabilities,
-}
+-- lspconfig.metals.setup {
+-- 	capabilities = capabilities,
+-- }
 
 --Enable (broadcasting) snippet capability for completion
 local cap = vim.lsp.protocol.make_client_capabilities()
