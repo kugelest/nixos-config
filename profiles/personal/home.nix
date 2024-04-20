@@ -40,6 +40,7 @@
 		# };
 		shellAliases = {
 		 ls="exa -al";
+		 store = "nix-store --gc --print-roots | rg -v '/proc/' | rg -Po '(?<= -> ).*' | xargs -o nix-tree";
 		};
 		zplug = {
 			enable = true;
