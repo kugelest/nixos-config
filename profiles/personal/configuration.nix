@@ -175,6 +175,7 @@
 		unzip
     vim
 		reaper
+		nix-tree
 		yabridge
 		yabridgectl
 		# python39
