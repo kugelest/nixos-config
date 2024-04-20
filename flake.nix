@@ -7,7 +7,9 @@
 		home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-	outputs = inputs@{ nixpkgs, home-manager, ... }:
+
+	# {lib, config, options, pkgs, modulesPath, ...}: //auto-passed parameters
+	outputs = { self, nixpkgs, home-manager, ... }@inputs :
 	let
 		systemSettings = {
       system = "x86_64-linux"; # system arch
@@ -23,32 +25,32 @@
 			name = "Stefan";
 		};
 
-		lib = nixpkgs.lib;
-
 	in {
 
-		nixosConfigurations = {
-			system = lib.nixosSystem {
-				system = systemSettings.system;
-				modules = [
-					(./. + "/profiles"+("/"+systemSettings.profile)+"/configuration.nix")
-					home-manager.nixosModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.${userSettings.username} = import ./profiles/personal/home.nix;
-						home-manager.extraSpecialArgs = {
-							inherit userSettings;
-						};
-          }
-				];
-				specialArgs = {
-					# inherit nixpkgs;
-					inherit systemSettings;
-          inherit userSettings;
-				};
-      };
-    };
+		nixosConfigurations.system = nixpkgs.lib.nixosSystem {
+			system = systemSettings.system;
+			modules = [
+				(./. + "/profiles"+("/"+systemSettings.profile)+"/configuration.nix")
+				home-manager.nixosModules.home-manager {
+					home-manager.useGlobalPkgs = true;
+					home-manager.useUserPackages = true;
+					home-manager.users.${userSettings.username} = import ./profiles/personal/home.nix;
+					home-manager.extraSpecialArgs = {
+						inherit userSettings;
+					};
+				}
+				{
+          _module.args = {
+						inherit systemSettings;
+						inherit userSettings;
+					};
+        }
+			];
+			# specialArgs = {
+			# 	inherit systemSettings;
+			# 	inherit userSettings;
+			# };
+		};
 
-
-  };
+	};
 }

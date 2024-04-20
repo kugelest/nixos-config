@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, lib, systemSettings, userSettings, ... }:
+{ pkgs, lib, systemSettings, userSettings, config, ... }:
 {
   imports = [
 		../../system/hardware-configuration.nix
@@ -143,6 +143,14 @@
 		# remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
 		# dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
 	};
+
+	environment.etc."current-system-packages".text =
+  let
+    packages = builtins.map (p: "${p.name}") config.environment.systemPackages;
+    sortedUnique = builtins.sort builtins.lessThan (pkgs.lib.lists.unique packages);
+    formatted = builtins.concatStringsSep "\n" sortedUnique;
+  in
+    formatted;
 
 
   # List packages installed in system profile. To search, run:

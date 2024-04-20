@@ -164,8 +164,8 @@
 
 	programs.kitty = {
 		enable = true;
-		# theme = "Alien Blood";
-		theme = "Belafonte Day";
+		theme = "Alien Blood";
+		# theme = "Belafonte Day";
 		font = {
 			# name = "MesloLGS NF";
 			# name = "FiraCode Nerd Font Mono";

@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, ... }:
+{ config, pkgs, userSettings, lib, ... }:
 
 {
   programs.neovim =
@@ -103,7 +103,7 @@
 			plenary-nvim
 		];
 
-		extraLuaConfig = ''
+		extraLuaConfig = lib.mkOverride 10 ''
 			vim.cmd[[colorscheme tokyonight-moon]]
 			${builtins.readFile ./options.lua}
 			${builtins.readFile ./keymaps.lua}
