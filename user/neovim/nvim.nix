@@ -57,10 +57,10 @@
 				plugin = telescope-nvim;
 				config = toLuaFile ./plugins/telescope.lua;
 			}
-			{
-				plugin = nvim-metals;
-				config = toLuaFile ./plugins/nvim-metals.lua;
-			}
+			# {
+			# 	plugin = nvim-metals;
+			# 	config = toLuaFile ./plugins/nvim-metals.lua;
+			# }
 			# {
 			# 	plugin = nvim-jdtls;
 			# 	config = toLuaFile /home/stefan/.setup/nvim/plugins/jdtls.lua;
@@ -118,7 +118,7 @@
 			nodePackages.volar
 			jdt-language-server
 			metals
-			coursier
+			# coursier
 		];
 	};
 }

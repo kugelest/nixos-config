@@ -48,9 +48,9 @@ lspconfig.nil_ls.setup {
 	capabilities = capabilities,
 }
 
--- lspconfig.metals.setup {
--- 	capabilities = capabilities,
--- }
+lspconfig.metals.setup {
+	capabilities = capabilities,
+}
 
 --Enable (broadcasting) snippet capability for completion
 local cap = vim.lsp.protocol.make_client_capabilities()
@@ -73,11 +73,6 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 vim.api.nvim_create_autocmd('LspAttach', {
 	group = vim.api.nvim_create_augroup('UserLspConfig', {}),
 	callback = function(ev)
-		-- Enable completion triggered by <c-x><c-o>
-		-- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-		-- Buffer local mappings.
-		-- See `:help vim.lsp.*` for documentation on any of the below functions
 		local opts = { buffer = ev.buf }
 		vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
 		vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
