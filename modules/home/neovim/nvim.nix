@@ -98,11 +98,11 @@
 			plenary-nvim
 		];
 
-		extraLuaConfig = lib.mkOverride 10 ''
-			vim.cmd[[colorscheme tokyonight-moon]]
-			${builtins.readFile ./options.lua}
-			${builtins.readFile ./keymaps.lua}
-			${builtins.readFile ./autocmds.lua}
+		extraLuaConfig = ''
+			vim.cmd 'colorscheme tokyonight-moon'
+			${lib.readFile ./options.lua}
+			${lib.readFile ./keymaps.lua}
+			${lib.readFile ./autocmds.lua}
 		'';
 
 		extraPackages = with pkgs; [
