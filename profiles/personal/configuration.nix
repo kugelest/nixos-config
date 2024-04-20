@@ -193,8 +193,10 @@
 		libreoffice
 		openvpn3
 		wl-clipboard
+		jetbrains.idea-community
 		oh-my-git
 		calibre
+		vscodium
 		xclip
 		syncthing
 		vcv-rack
