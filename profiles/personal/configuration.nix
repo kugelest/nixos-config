@@ -13,9 +13,19 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-	# Limit the number of generations to keep
-  # boot.loader.systemd-boot.configurationLimit = 10;
-  boot.loader.grub.configurationLimit = 10;
+
+    # Bootloader.
+	boot = {
+  	loader = {
+			grub = {
+				enable = true;
+				device = "/dev/sda";
+				useOSProber = true;
+				configurationLimit = 10;
+			};
+			timeout = 2;
+		};
+	};
 
   # Perform garbage collection weekly to maintain low disk usage
   nix.gc = {
