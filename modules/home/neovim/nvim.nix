@@ -3,8 +3,7 @@
 {
   programs.neovim =
 	let
-		toLua = str: "lua << EOF\n${str}\nEOF\n";
-		toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+		plugin_path = ./plugins;
 	in
 	{
 		enable = true;
@@ -15,47 +14,58 @@
 		plugins = with pkgs.vimPlugins; [
 			{
 				plugin = oil-nvim;
-				config = toLuaFile ./plugins/oil.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/oil.lua");
 			}
 			{
 				plugin = which-key-nvim;
-				config = toLuaFile ./plugins/which-key.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/which-key.lua");
 			}
 			{
 				plugin = nvim-autopairs;
-				config = toLuaFile ./plugins/autopairs.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/autopairs.lua");
 			}
 			{
 				plugin = comment-nvim;
-				config = toLuaFile ./plugins/comment.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/comment.lua");
 			}
 			{
 				plugin = indent-blankline-nvim;
-				config = toLuaFile ./plugins/indent-blankline.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/indent-blankline.lua");
 			}
 			{
 				plugin = nvim-lspconfig;
-				config = toLuaFile ./plugins/lspconfig.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/lspconfig.lua");
 			}
 			{
 				plugin = lualine-nvim;
-				config = toLuaFile ./plugins/lualine.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/lualine.lua");
 			}
 			{
 				plugin = nvim-navic;
-				config = toLuaFile ./plugins/navic.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/navic.lua");
 			}
 			{
 				plugin = nvim-cmp;
-				config = toLuaFile ./plugins/cmp.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/cmp.lua");
 			}
 			{
 				plugin = nvim-surround;
-				config = toLuaFile ./plugins/surround.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/surround.lua");
 			}
 			{
 				plugin = telescope-nvim;
-				config = toLuaFile ./plugins/telescope.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/telescope.lua");
 			}
 			# {
 			# 	plugin = nvim-metals;
@@ -66,29 +76,14 @@
 			# 	config = toLuaFile /home/stefan/.setup/nvim/plugins/jdtls.lua;
 			# }
 			{
-				plugin = (nvim-treesitter.withPlugins (p: [
-					p.tree-sitter-nix
-					p.tree-sitter-lua
-					p.tree-sitter-html
-					p.tree-sitter-css
-					p.tree-sitter-typescript
-					p.tree-sitter-javascript
-					p.tree-sitter-json
-					p.tree-sitter-vue
-					p.tree-sitter-java
-					p.tree-sitter-scala
-					p.tree-sitter-python
-					p.tree-sitter-bash
-					p.tree-sitter-c
-					p.tree-sitter-make
-					p.tree-sitter-markdown
-					p.tree-sitter-dockerfile
-				]));
-				config = toLuaFile ./plugins/treesitter.lua;
+				plugin = nvim-treesitter.withAllGrammars;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/treesitter.lua");
 			}
 			{
 				plugin = nvim-treesitter-context;
-				config = toLuaFile ./plugins/treesitter-context.lua;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/treesitter-context.lua");
 			}
 			nvim-treesitter-textobjects
 			vim-repeat
