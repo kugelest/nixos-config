@@ -5,10 +5,10 @@
   home.homeDirectory = "/home/"+userSettings.username;
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-	programs.home-manager.enable = true;
+	# programs.home-manager.enable = true;
 
 	imports = [
-		../../user/neovim/nvim.nix
+		../../modules/home/neovim/nvim.nix
 	];
 
 
