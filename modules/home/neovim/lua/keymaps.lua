@@ -13,6 +13,7 @@ vim.keymap.set('n', '<leader>f?', telescope.help_tags, {desc = 'Help File'})
 vim.keymap.set('n', '<leader>fp', telescope.oldfiles, {desc = 'Previous File'})
 vim.keymap.set('n', '<leader>f/', telescope.live_grep, {desc = 'Grep Files'})
 vim.keymap.set('n', '<leader>fx', telescope.commands, {desc = 'Command'})
+vim.keymap.set('n', '<leader>fs', telescope.lsp_dynamic_workspace_symbols, {desc = 'Symbols'})
 
 
 local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
@@ -27,5 +28,5 @@ vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
 
 
 local metals_tvp = require("metals.tvp")
-vim.keymap.set('n', '<leader>mt', metals_tvp.toggle_tree_view, {desc = 'Toggle tree view'})
-vim.keymap.set('n', '<leader>mr', metals_tvp.reveal_in_tree, {desc = 'Reveal in tree'})
+vim.keymap.set('n', '<leader>mt', metals_tvp.toggle_tree_view, {desc = 'Toggle [t]ree view'})
+vim.keymap.set('n', '<leader>mr', metals_tvp.reveal_in_tree, {desc = '[R]eveal in tree'})
