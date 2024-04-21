@@ -12,11 +12,11 @@
 		vimdiffAlias = true;
 
 		plugins = with pkgs.vimPlugins; [
-			{
-				plugin = neodev-nvim;
-				type = "lua";
-				config = lib.readFile(plugin_path + "/neodev.lua");
-			}
+			# {
+			# 	plugin = neodev-nvim;
+			# 	type = "lua";
+			# 	config = lib.readFile(plugin_path + "/neodev.lua");
+			# }
 			{
 				plugin = oil-nvim;
 				type = "lua";
