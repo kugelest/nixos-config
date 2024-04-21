@@ -13,6 +13,11 @@
 
 		plugins = with pkgs.vimPlugins; [
 			# {
+			# 	plugin = neoconf-nvim;
+			# 	type = "lua";
+			# 	config = lib.readFile(plugin_path + "/neoconf.lua");
+			# }
+			# {
 			# 	plugin = neodev-nvim;
 			# 	type = "lua";
 			# 	config = lib.readFile(plugin_path + "/neodev.lua");

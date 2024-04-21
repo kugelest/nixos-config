@@ -195,7 +195,6 @@
 		wl-clipboard
 		jetbrains.idea-community
 		oh-my-git
-		calibre
 		vscodium
 		xclip
 		syncthing
