@@ -118,7 +118,7 @@
 			nodePackages_latest.vscode-css-languageserver-bin
 			nodePackages.volar
 			jdt-language-server
-			# metals
+			metals
 			coursier
 			jdk17
 			bloop

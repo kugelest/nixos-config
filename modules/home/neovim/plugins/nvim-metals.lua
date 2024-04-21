@@ -3,6 +3,8 @@ local metals_config = require("metals").bare_config()
 
 -- Example of settings
 metals_config.settings = {
+	metalsBinaryPath = '/nix/store/cc6h1m7rass3sdvc17f0zr5i8y76ymfa-metals-1.2.2/bin/metals',
+	-- metalsBinaryPath = vim.fn.system('nix path-info nixpkgs#metals'),
 	showImplicitArguments = true,
 	excludedPackages = { "akka.actor.typed.javadsl", "com.github.swagger.akka.javadsl" },
 }
