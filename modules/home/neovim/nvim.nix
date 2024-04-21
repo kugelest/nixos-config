@@ -3,7 +3,7 @@
 {
   programs.neovim =
 	let
-		plugin_path = ./plugins;
+		plugin_path = ./lua/plugins;
 	in
 	{
 		enable = true;
@@ -12,6 +12,11 @@
 		vimdiffAlias = true;
 
 		plugins = with pkgs.vimPlugins; [
+			{
+				plugin = neodev-nvim;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/neodev.lua");
+			}
 			{
 				plugin = oil-nvim;
 				type = "lua";
@@ -106,9 +111,9 @@
 
 		extraLuaConfig = ''
 			vim.cmd 'colorscheme tokyonight-moon'
-			${lib.readFile ./options.lua}
-			${lib.readFile ./keymaps.lua}
-			${lib.readFile ./autocmds.lua}
+			${lib.readFile ./lua/options.lua}
+			${lib.readFile ./lua/keymaps.lua}
+			${lib.readFile ./lua/autocmds.lua}
 		'';
 
 		extraPackages = with pkgs; [
