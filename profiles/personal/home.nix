@@ -183,8 +183,8 @@
 			"ctrl+shift+v" = "paste_from_clipboard";
 
 			#font
-			"ctrl+plus" = "change_font_size all +0.1";
-			"ctrl+minus" = "change_font_size all -0.1";
+			"ctrl+plus" = "change_font_size all +0.2";
+			"ctrl+minus" = "change_font_size all -0.2";
 
 			# windows
 			# "ctrl+shift+enter" = "new_window";
