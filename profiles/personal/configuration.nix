@@ -206,6 +206,7 @@
 		reaper
 		nix-tree
 		yabridge
+		tldr
 		yabridgectl
 		# python39
 		# brave
