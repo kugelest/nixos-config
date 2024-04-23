@@ -15,7 +15,7 @@ require('telescope').setup{
 			}
 		},
 		path_display = {
-			truncate = 3,
+			truncate = 1,
 		}
 	},
 	pickers = {
