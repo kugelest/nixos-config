@@ -13,6 +13,9 @@ require('telescope').setup{
 			i = {
 				['<esc>'] = require('telescope.actions').close
 			}
+		},
+		path_display = {
+			truncate = 3,
 		}
 	},
 	pickers = {
