@@ -14,6 +14,7 @@ vim.keymap.set('n', '<leader>fp', telescope.oldfiles, {desc = 'Previous File'})
 vim.keymap.set('n', '<leader>f/', telescope.live_grep, {desc = 'Grep Files'})
 vim.keymap.set('n', '<leader>fx', telescope.commands, {desc = 'Command'})
 vim.keymap.set('n', '<leader>fs', telescope.lsp_dynamic_workspace_symbols, {desc = 'Symbols'})
+vim.keymap.set('n', '<leader>fs', telescope.lsp_references, {desc = 'References'})
 
 
 local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
