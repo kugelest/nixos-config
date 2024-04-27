@@ -244,6 +244,10 @@
 		feh
   ];
 
+	environment.variables = {
+		MANPAGER = "nvim +Man!";
+	};
+
 	fonts = {
 		enableDefaultPackages = true;
 		packages = with pkgs; [
