@@ -46,7 +46,7 @@
   	# hostName = "nixos";
   	# hostName = hostName;
 		interfaces = {
-			enp2s0.ipv4.addresses = [{
+			eth0.ipv4.addresses = [{
 				address = "192.168.178.20";
 				prefixLength = 24;
 			}];
