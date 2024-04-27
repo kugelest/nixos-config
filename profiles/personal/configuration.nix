@@ -103,7 +103,7 @@
   };
 
   # Configure console keymap
-  console.keyMap = systemSettings.keymap;
+  # console.keyMap = systemSettings.keymap;
 	console.useXkbConfig = true;
 
   # Enable CUPS to print documents.
