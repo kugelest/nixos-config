@@ -181,10 +181,7 @@
     formatted;
 
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-		# inputs.helix.packages."${pkgs.system}".helix
 		man-pages
 		man-pages-posix
 		docker-compose
@@ -208,29 +205,21 @@
 		yabridge
 		tldr
 		yabridgectl
-		# python39
-		# brave
 		gcc
 		wget
-		# nodejs_20
 		fzf
 		kitty
-		# gh
-		# gnupg
-		# git
 		pass
 		zoxide
 		eza
 		ripgrep
 		fd
 		rofi
-		# tessen
 		neofetch
 		tree
 		gnumake
 		thunderbird
 		feh
-		# nodePackages_latest.vscode-css-languageserver-bin
   ];
 
 	fonts.packages = with pkgs; [
@@ -261,19 +250,15 @@
 	# 	};
 	# };
 
-	programs.zsh.enable = true;
+	# environment.pathsToLink = [ "/share/zsh" ];
+
+	programs.zsh = {
+		enable = true;
+	};
+		# promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+	# };
 	users.defaultUserShell = pkgs.zsh;
 	environment.shells = with pkgs; [ zsh ];
-
-	# services.openvpn.servers = {
- #    HTWG  = {
-	# 		config = '' config /home/stefan/studium/_vpn/HTWG-MFA-WS2324.ovpn '';
-	# 		authUserPass = {
-	# 			username = "st391kug";
-	# 			password = "";
-	# 		};
-		# };
-  # };
 
 
 	programs.htop = {
