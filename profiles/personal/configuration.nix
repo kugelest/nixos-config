@@ -243,6 +243,7 @@
 		thunderbird
 		feh
 		pkg-config
+		go
   ];
 
 	fonts = {
