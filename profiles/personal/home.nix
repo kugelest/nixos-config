@@ -5,6 +5,10 @@
   home.homeDirectory = "/home/"+userSettings.username;
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
+	home.sessionVariables = {
+		MANPAGER = "nvim +Man!";
+	};
+
 	# programs.home-manager.enable = true;
 
 	imports = [
