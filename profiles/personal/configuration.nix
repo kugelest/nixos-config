@@ -63,7 +63,7 @@
 	};
 
 	security.sudo.extraConfig = ''
-		Defaults timestamp_timeout=60
+		Defaults timestamp_timeout=120
 	'';
 
   # Set your time zone.
@@ -90,8 +90,20 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 	environment.gnome.excludePackages = (with pkgs; [
+		gnome-photos
 		gnome-tour
+	]) ++ (with pkgs.gnome; [
+		gnome-music
+		gnome-terminal
+		epiphany # web browser
+		geary # email reader
+		totem # video player
 	]);
+	services.xserver.displayManager.autoLogin.enable = true;
+	services.xserver.displayManager.autoLogin.user = "stefan";
+	systemd.services."getty@tty1".enable = false;
+	systemd.services."autovt@tty1".enable = false;
+
 
   # Configure keymap in X11
   services.xserver = {
