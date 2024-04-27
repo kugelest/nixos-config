@@ -98,6 +98,7 @@
 	environment.gnome.excludePackages = (with pkgs; [
 		gnome-photos
 		gnome-tour
+		geoclue2
 	]) ++ (with pkgs.gnome; [
 		gnome-music
 		gnome-terminal
