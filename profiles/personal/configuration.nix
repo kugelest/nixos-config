@@ -244,15 +244,25 @@
 		feh
   ];
 
-	fonts.packages = with pkgs; [
-		noto-fonts
-		noto-fonts-cjk
-		noto-fonts-emoji
-		dejavu_fonts
-		liberation_ttf
-		(nerdfonts.override { fonts = [ "Iosevka" "FiraCode" "DroidSansMono" ]; })
-		meslo-lgs-nf
-	];
+	fonts = {
+		enableDefaultPackages = true;
+		packages = with pkgs; [
+			ubuntu_font_family
+			noto-fonts
+			noto-fonts-cjk
+			noto-fonts-emoji
+			dejavu_fonts
+			liberation_ttf
+			(nerdfonts.override { fonts = [ "Iosevka" "FiraCode" "DroidSansMono" ]; })
+			meslo-lgs-nf
+		];
+		# fontconfig = {
+		# 	defaultFonts = {
+		# 		monospace = [ "Ubuntu Monospace" ];
+		# 	};
+		# };
+	};
+
 
 	documentation.dev.enable = true;
 

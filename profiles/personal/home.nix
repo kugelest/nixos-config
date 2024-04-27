@@ -181,6 +181,7 @@
 			# name = "FiraCode Nerd Font Mono";
 			# name = "Iosevka Nerd Font Mono";
 			name = "DejaVu Sans Mono";
+			# name = "Ubuntu Monospace";
 			size = 11;
 		};
 		keybindings = {
