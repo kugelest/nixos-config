@@ -99,8 +99,8 @@
 		geary # email reader
 		totem # video player
 	]);
-	services.xserver.displayManager.autoLogin.enable = true;
-	services.xserver.displayManager.autoLogin.user = "stefan";
+	services.displayManager.autoLogin.enable = true;
+	services.displayManager.autoLogin.user = "stefan";
 	systemd.services."getty@tty1".enable = false;
 	systemd.services."autovt@tty1".enable = false;
 
