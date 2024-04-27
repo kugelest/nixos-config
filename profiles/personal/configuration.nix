@@ -111,6 +111,8 @@
 	systemd.services."autovt@tty1".enable = false;
 
 
+	services.gnome.gnome-keyring.enable = false;
+
   # Configure keymap in X11
   services.xserver = {
 		xkb = {
