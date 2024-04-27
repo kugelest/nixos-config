@@ -242,6 +242,7 @@
 		gnumake
 		thunderbird
 		feh
+		pkg-config
   ];
 
 	fonts = {
