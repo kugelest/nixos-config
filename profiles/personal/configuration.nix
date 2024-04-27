@@ -98,6 +98,7 @@
 		xkb = {
 			layout =	systemSettings.keymap;
 			variant = "";
+			options = "caps:escape";
 		};
   };
 
