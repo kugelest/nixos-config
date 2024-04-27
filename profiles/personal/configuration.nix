@@ -49,6 +49,7 @@
 		enableIPv6 = true;
 		networkmanager = {
 			enable = true;
+			dhcp = "dhcpcd";
 			# insertNameservers = [ "8.8.8.8" "8.8.4.4" ];
 			# unmanaged = [ "wlp3s0" ];
 		};
