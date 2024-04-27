@@ -198,7 +198,6 @@
   environment.systemPackages = with pkgs; [
 		man-pages
 		man-pages-posix
-		docker-compose
 		firefox
 		chromium
 		libreoffice
@@ -279,7 +278,6 @@
 		enable = true;
 	};
 
-	virtualisation.docker.enable = true;
 
 	virtualisation.libvirtd.enable = true;
 	programs.virt-manager.enable = true;
