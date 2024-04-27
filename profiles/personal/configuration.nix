@@ -45,12 +45,12 @@
   networking = {
   	# hostName = "nixos";
   	# hostName = hostName;
-		interfaces = {
-			eth0.ipv4.addresses = [{
-				address = "192.168.178.20";
-				prefixLength = 24;
-			}];
-		};
+		# interfaces = {
+		# 	eth0.ipv4.addresses = [{
+		# 		address = "192.168.178.20";
+		# 		prefixLength = 24;
+		# 	}];
+		# };
   	hostName = systemSettings.hostname;
 		enableIPv6 = true;
 		networkmanager = {
