@@ -265,6 +265,7 @@
 		# };
 	};
 
+	virtualisation.docker.enable = true;
 
 	documentation.dev.enable = true;
 
