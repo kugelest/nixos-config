@@ -242,7 +242,7 @@
 		gnumake
 		thunderbird
 		feh
-		pkg-config
+		# pkg-config
 		go
   ];
 
