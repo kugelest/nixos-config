@@ -237,7 +237,7 @@
 		ripgrep
 		fd
 		rofi
-		neofetch
+		fastfetch
 		tree
 		gnumake
 		thunderbird
