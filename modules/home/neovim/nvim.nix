@@ -130,7 +130,7 @@
 			jdt-language-server
 			metals
 			coursier
-			jdk17
+			jdk
 			bloop
 		];
 	};
