@@ -218,6 +218,7 @@
 		xclip
 		syncthing
 		obs-studio
+		mpv
 		vcv-rack
 		usbutils
 		alsa-utils
