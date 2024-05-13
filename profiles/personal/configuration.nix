@@ -217,6 +217,7 @@
 		vscodium
 		xclip
 		syncthing
+		obs-studio
 		vcv-rack
 		usbutils
 		alsa-utils
