@@ -31,3 +31,7 @@ vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
 local metals_tvp = require("metals.tvp")
 vim.keymap.set('n', '<leader>mt', metals_tvp.toggle_tree_view, {desc = 'Toggle [t]ree view'})
 vim.keymap.set('n', '<leader>mr', metals_tvp.reveal_in_tree, {desc = '[R]eveal in tree'})
+
+
+local oil = require("oil")
+vim.keymap.set('n', '-', oil.open, {desc = 'Oil'})
