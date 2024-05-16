@@ -112,6 +112,7 @@
 			cmp-cmdline
 			cmp-buffer
 			plenary-nvim
+			telescope-fzf-native-nvim
 		];
 
 		extraLuaConfig = ''
