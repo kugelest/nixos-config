@@ -133,6 +133,8 @@
 			coursier
 			jdk
 			bloop
+			fzf
+			ripgrep
 		];
 	};
 }
