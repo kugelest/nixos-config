@@ -6,7 +6,7 @@ vim.keymap.set('', 'j', 'h', {desc = 'Left'})
 
 
 local telescope = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', telescope.find_files, {desc = 'File'})
+vim.keymap.set('n', '<leader>ff', function() telescope.find_files({hidden = true, no_ignore = true}) end, {desc = 'File'})
 vim.keymap.set('n', '<leader>fg', telescope.git_files, {desc = 'Git File'})
 vim.keymap.set('n', '<leader>fb', telescope.buffers, {desc = 'Buffer File'})
 vim.keymap.set('n', '<leader>f?', telescope.help_tags, {desc = 'Help File'})
