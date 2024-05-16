@@ -1,3 +1,14 @@
+local function show_macro_recording()
+	local recording_register = vim.fn.reg_recording()
+	if recording_register == "" then
+		return ""
+	else
+		return "Recording @" .. recording_register
+	end
+end
+
+local navic = require("nvim-navic")
+
 require('lualine').setup {
 	options = {
 		icons_enabled = true,
@@ -23,18 +34,17 @@ require('lualine').setup {
 		lualine_c = {
 			'filename',
 			{
-				function()
-					return require('nvim-navic').get_location()
-				end,
-				cond = function()
-					return require('nvim-navic').is_available()
-				end
+				"navic",
+				color_correction = nil,
+				navic_opts = nil
 			},
 		},
 		lualine_x = {
-			'encoding',
-			'fileformat',
-			'filetype'
+			{
+				"macro-recording",
+				fmt = show_macro_recording,
+			},
+			'filetype',
 		},
 		lualine_y = { 'progress' },
 		lualine_z = { 'location' }
