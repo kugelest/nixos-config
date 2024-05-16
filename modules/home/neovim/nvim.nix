@@ -96,11 +96,11 @@
 				type = "lua";
 				config = lib.readFile(plugin_path + "/treesitter.lua");
 			}
-			{
-				plugin = nvim-treesitter-context;
-				type = "lua";
-				config = lib.readFile(plugin_path + "/treesitter-context.lua");
-			}
+			# {
+			# 	plugin = nvim-treesitter-context;
+			# 	type = "lua";
+			# 	config = lib.readFile(plugin_path + "/treesitter-context.lua");
+			# }
 			nvim-treesitter-textobjects
 			vim-repeat
 			gitsigns-nvim
