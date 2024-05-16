@@ -219,6 +219,7 @@
 		syncthing
 		obs-studio
 		mpv
+		zsh-completions
 		vcv-rack
 		usbutils
 		alsa-utils
