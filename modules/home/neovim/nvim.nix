@@ -96,6 +96,11 @@
 				type = "lua";
 				config = lib.readFile(plugin_path + "/treesitter.lua");
 			}
+			{
+				plugin = nvim-web-devicons;
+				type = "lua";
+				config = lib.readFile(plugin_path + "/nvim-web-devicons.lua");
+			}
 			# {
 			# 	plugin = nvim-treesitter-context;
 			# 	type = "lua";
