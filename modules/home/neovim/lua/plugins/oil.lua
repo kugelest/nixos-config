@@ -1,5 +1,6 @@
 require("oil").setup({
 	skip_confirm_for_simple_edits = true,
+	columns = {"icons"},
 	git = {
 		-- Return true to automatically git add/mv/rm files
 		add = function(path)
@@ -13,3 +14,5 @@ require("oil").setup({
 		end,
 	}
 })
+
+
