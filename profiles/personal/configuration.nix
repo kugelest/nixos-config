@@ -220,6 +220,7 @@
 		obs-studio
 		mpv
 		zsh-completions
+		transmission
 		vcv-rack
 		usbutils
 		alsa-utils
