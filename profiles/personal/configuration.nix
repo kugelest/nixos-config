@@ -221,6 +221,7 @@
 		mpv
 		zsh-completions
 		transmission
+		glfw
 		vcv-rack
 		usbutils
 		alsa-utils
