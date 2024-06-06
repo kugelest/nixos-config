@@ -95,24 +95,24 @@
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-	environment.gnome.excludePackages = (with pkgs; [
-		gnome-photos
-		gnome-tour
-		geoclue2
-	]) ++ (with pkgs.gnome; [
-		gnome-music
-		gnome-terminal
-		epiphany # web browser
-		geary # email reader
-		totem # video player
-	]);
+	# environment.gnome.excludePackages = (with pkgs; [
+	# 	gnome-photos
+	# 	gnome-tour
+	# 	geoclue2
+	# ]) ++ (with pkgs.gnome; [
+	# 	gnome-music
+	# 	gnome-terminal
+	# 	epiphany # web browser
+	# 	geary # email reader
+	# 	totem # video player
+	# ]);
 	services.displayManager.autoLogin.enable = true;
 	services.displayManager.autoLogin.user = "stefan";
 	systemd.services."getty@tty1".enable = false;
 	systemd.services."autovt@tty1".enable = false;
 
 
-	services.gnome.gnome-keyring.enable = lib.mkForce false;
+	# services.gnome.gnome-keyring.enable = lib.mkForce false;
 
   # Configure keymap in X11
   services.xserver = {
@@ -221,7 +221,6 @@
 		mpv
 		zsh-completions
 		transmission
-		glfw
 		vcv-rack
 		usbutils
 		alsa-utils
