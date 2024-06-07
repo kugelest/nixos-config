@@ -235,7 +235,7 @@
 		mpv
 		zsh-completions
 		transmission
-		vcv-rack
+		# vcv-rack
 		usbutils
 		alsa-utils
 		unzip
