@@ -117,6 +117,8 @@
 	services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+	services.xserver.displayManager.autoLogin.enable = true;
+	services.xserver.displayManager.autoLogin.user = "stefan";
 	# services.displayManager.sddm.enable = true;
 	# services.desktopManager.plasma6.enable = true;
 	# environment.gnome.excludePackages = (with pkgs; [
@@ -142,10 +144,6 @@
 			layout =	systemSettings.keymap;
 			variant = "";
 			options = "caps:escape";
-		};
-		displayManager.autoLogin = {
-			enable = true;
-			user = "stefan";
 		};
   };
 
