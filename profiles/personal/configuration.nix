@@ -130,8 +130,6 @@
 	# 	geary # email reader
 	# 	totem # video player
 	# ]);
-	services.displayManager.autoLogin.enable = true;
-	services.displayManager.autoLogin.user = "stefan";
 	systemd.services."getty@tty1".enable = false;
 	systemd.services."autovt@tty1".enable = false;
 
@@ -145,6 +143,8 @@
 			variant = "";
 			options = "caps:escape";
 		};
+		displayManager.autoLogin.enable = true;
+		displayManager.autoLogin.user = "stefan";
   };
 
   # Configure console keymap
