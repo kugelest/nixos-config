@@ -23,10 +23,10 @@
 	# };
 	# hardware.opengl.driSupport = true; # This is already enabled by default
 
-environment.variables = {
-  ROC_ENABLE_PRE_VEGA = "1";
-};
-systemd.tmpfiles.rules = [
+	environment.variables = {
+		ROC_ENABLE_PRE_VEGA = "1";
+	};
+	systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
 
