@@ -277,7 +277,7 @@
 		gnumake
 		thunderbird
 		feh
-		glfw-wayland
+		vulkan-tools
 		# pkg-config
 		# go
   ];
