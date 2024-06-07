@@ -12,6 +12,7 @@
 	boot.initrd.kernelModules = [ "amdgpu" ];
 	services.xserver.enable = true;
 	services.xserver.videoDrivers = [ "amdgpu" ];
+	hardware.opengl.enable = true;
 	hardware.opengl.extraPackages = with pkgs; [
   	rocmPackages.clr.icd
   	amdvlk
@@ -20,7 +21,6 @@
   	ROC_ENABLE_PRE_VEGA = "1";
 	};
 	hardware.opengl.driSupport = true; # This is already enabled by default
-	hardware.opengl.driSupport32Bit = true; # For 32 bit applications
 
 
 
