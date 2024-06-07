@@ -262,6 +262,7 @@
 		gnumake
 		thunderbird
 		feh
+		glfw-wayland
 		# pkg-config
 		# go
   ];
