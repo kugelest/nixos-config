@@ -9,9 +9,11 @@
   ];
 
 	# amd gpu stuff
-	boot.initrd.kernelModules = [ "amdgpu" ];
+	# boot.initrd.kernelModules = [ "amdgpu" ];
+	boot.initrd.kernelModules = [ "radeon" ];
 	services.xserver.enable = true;
-	services.xserver.videoDrivers = [ "amdgpu" ];
+	# services.xserver.videoDrivers = [ "amdgpu" ];
+	services.xserver.videoDrivers = [ "modesetting" ];
 	hardware.opengl.enable = true;
 	hardware.opengl.extraPackages = with pkgs; [
   	rocmPackages.clr.icd
