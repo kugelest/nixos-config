@@ -23,6 +23,12 @@
 	# };
 	# hardware.opengl.driSupport = true; # This is already enabled by default
 
+environment.variables = {
+  ROC_ENABLE_PRE_VEGA = "1";
+};
+systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+  ];
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -109,10 +115,10 @@
 
   # Enable the GNOME Desktop Environment.
 	services.xserver.enable = true;
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
-	services.displayManager.sddm.enable = true;
-	services.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+	# services.displayManager.sddm.enable = true;
+	# services.desktopManager.plasma6.enable = true;
 	# environment.gnome.excludePackages = (with pkgs; [
 	# 	gnome-photos
 	# 	gnome-tour
