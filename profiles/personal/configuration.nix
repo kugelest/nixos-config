@@ -29,6 +29,13 @@
 	systemd.tmpfiles.rules = [
     "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
   ];
+	hardware.opengl.extraPackages = with pkgs; [
+  	rocmPackages.clr.icd
+		amdvlk
+	];
+	hardware.opengl.extraPackages32 = with pkgs; [
+  	driversi686Linux.amdvlk
+	];
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
