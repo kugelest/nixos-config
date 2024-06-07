@@ -8,21 +8,21 @@
 		../../system/hardware-configuration.nix
   ];
 
-	# amd gpu stuff
-	# boot.initrd.kernelModules = [ "amdgpu" ];
-	boot.initrd.kernelModules = [ "radeon" ];
-	services.xserver.enable = true;
-	# services.xserver.videoDrivers = [ "amdgpu" ];
-	services.xserver.videoDrivers = [ "modesetting" ];
-	hardware.opengl.enable = true;
-	hardware.opengl.extraPackages = with pkgs; [
-  	rocmPackages.clr.icd
-  	amdvlk
-	];
-	environment.variables = {
-  	ROC_ENABLE_PRE_VEGA = "1";
-	};
-	hardware.opengl.driSupport = true; # This is already enabled by default
+	# # amd gpu stuff
+	# # boot.initrd.kernelModules = [ "amdgpu" ];
+	# boot.initrd.kernelModules = [ "radeon" ];
+	# services.xserver.enable = true;
+	# # services.xserver.videoDrivers = [ "amdgpu" ];
+	# services.xserver.videoDrivers = [ "modesetting" ];
+	# hardware.opengl.enable = true;
+	# hardware.opengl.extraPackages = with pkgs; [
+ #  	rocmPackages.clr.icd
+ #  	amdvlk
+	# ];
+	# environment.variables = {
+ #  	ROC_ENABLE_PRE_VEGA = "1";
+	# };
+	# hardware.opengl.driSupport = true; # This is already enabled by default
 
 
 
