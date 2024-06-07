@@ -143,8 +143,10 @@
 			variant = "";
 			options = "caps:escape";
 		};
-		displayManager.autoLogin.enable = true;
-		displayManager.autoLogin.user = "stefan";
+		displayManager.autoLogin = {
+			enable = true;
+			user = "stefan";
+		};
   };
 
   # Configure console keymap
