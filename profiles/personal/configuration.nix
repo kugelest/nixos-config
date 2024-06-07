@@ -8,6 +8,22 @@
 		../../system/hardware-configuration.nix
   ];
 
+	# amd gpu stuff
+	boot.initrd.kernelModules = [ "amdgpu" ];
+	services.xserver.enable = true;
+	services.xserver.videoDrivers = [ "amdgpu" ];
+	hardware.opengl.extraPackages = with pkgs; [
+  	rocmPackages.clr.icd
+  	amdvlk
+	];
+	environment.variables = {
+  	ROC_ENABLE_PRE_VEGA = "1";
+	};
+	hardware.opengl.driSupport = true; # This is already enabled by default
+	hardware.opengl.driSupport32Bit = true; # For 32 bit applications
+
+
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Allow unfree packages
@@ -89,8 +105,6 @@
     LC_TIME = systemSettings.locale;
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
