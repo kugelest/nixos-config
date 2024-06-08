@@ -289,6 +289,7 @@
 		glew
 		libGL
 		cardinal
+		bespokesynth
 		# pkg-config
 		# go
   ];
