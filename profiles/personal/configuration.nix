@@ -288,6 +288,7 @@
   	mesa-demos
 		glew
 		libGL
+		cardinal
 		# pkg-config
 		# go
   ];
