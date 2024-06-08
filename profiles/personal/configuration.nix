@@ -285,6 +285,10 @@
 		vulkan-tools
 		mesa
   	mesa-demos
+		glew
+    libGL
+    libGLU
+    libGLEW
 		# pkg-config
 		# go
   ];
