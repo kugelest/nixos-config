@@ -13,7 +13,7 @@
 	# boot.initrd.kernelModules = [ "radeon" ];
 	# # services.xserver.videoDrivers = [ "amdgpu" ];
 	# services.xserver.videoDrivers = [ "modesetting" ];
-	# hardware.opengl.enable = true;
+	hardware.opengl.enable = true;
 	# hardware.opengl.extraPackages = with pkgs; [
  #  	rocmPackages.clr.icd
  #  	amdvlk
