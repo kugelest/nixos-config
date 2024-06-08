@@ -10,6 +10,11 @@ let
     owner = "nixos";
     repo = "nixpkgs";
     rev = "d6cc5370a20d086397bf8e80ad5ece64af563761";     }) { inherit (pkgs) system; };
+
+	# old-vcv-rack = import nixpkgs-vcv-rack { };
+
+  # Specify the package you want to use from the old nixpkgs
+  old-vcv-rack = nixpkgs-vcv-rack.vcv-rack;
 in
 {
   imports = [
@@ -54,7 +59,6 @@ in
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  nixpkgs-vcv-rack.config.allowUnfree = true;
 
 
     # Bootloader.
@@ -291,12 +295,14 @@ in
 		thunderbird
 		feh
 		vulkan-tools
+		old-vcv-rack
 		# pkg-config
 		# go
-  ] ++
-	[
-		nixpkgs-vcv-rack.vcv-rack
-	];
+  ];
+	# ++
+	# [
+	# 	nixpkgs-vcv-rack.vcv-rack
+	# ];
 
 	fonts = {
 		enableDefaultPackages = true;
