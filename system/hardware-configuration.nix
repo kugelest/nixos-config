@@ -10,7 +10,7 @@
 
   boot.initrd.availableKernelModules = [ "ahci" "ohci_pci" "ehci_pci" "pata_atiixp" "usbhid" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
-	services.xserver.videoDrivers = [ "amdgpu" ];
+	services.xserver.videoDrivers = [ "modesetting" ];
   # boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
