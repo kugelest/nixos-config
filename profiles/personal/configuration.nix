@@ -283,6 +283,8 @@
 		thunderbird
 		feh
 		vulkan-tools
+		mesa
+  	mesa-demos
 		# pkg-config
 		# go
   ];
