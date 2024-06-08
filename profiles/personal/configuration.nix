@@ -14,6 +14,7 @@
 	# # services.xserver.videoDrivers = [ "amdgpu" ];
 	# services.xserver.videoDrivers = [ "modesetting" ];
 	hardware.opengl.enable = true;
+	hardware.opengl.driSupport = true;
 	# hardware.opengl.extraPackages = with pkgs; [
  #  	rocmPackages.clr.icd
  #  	amdvlk
