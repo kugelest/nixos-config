@@ -9,7 +9,7 @@ let
     type = "github";
     owner = "nixos";
     repo = "nixpkgs";
-    rev = "d6cc5370a20d086397bf8e80ad5ece64af563761";     }) { inherit (pkgs) system; };
+    rev = "d6cc5370a20d086397bf8e80ad5ece64af563761";     }) { inherit (pkgs) system; config = { allowUnfree = true; }; };
 
 	# old-vcv-rack = import nixpkgs-vcv-rack { };
 
