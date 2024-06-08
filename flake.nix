@@ -3,6 +3,7 @@
 
   inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+		# old-vcv-rack-nixpkgs = "github:nixos/nixpkgs/d6cc5370a20d086397bf8e80ad5ece64af563761";
 		# nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 		home-manager = {
 			url = "github:nix-community/home-manager";

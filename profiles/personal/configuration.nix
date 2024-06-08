@@ -3,6 +3,14 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { pkgs, lib, config, systemSettings, userSettings, inputs, ... }:
+
+let
+  nixpkgs-vcv-rack = import (builtins.fetchTree {
+    type = "github";
+    owner = "nixos";
+    repo = "nixpkgs";
+    rev = "d6cc5370a20d086397bf8e80ad5ece64af563761";     }) { inherit (pkgs) system; };
+in
 {
   imports = [
 		../../system/hardware-configuration.nix
@@ -256,7 +264,7 @@
 		mpv
 		zsh-completions
 		transmission
-		vcv-rack
+		# vcv-rack
 		usbutils
 		alsa-utils
 		unzip
@@ -284,7 +292,10 @@
 		vulkan-tools
 		# pkg-config
 		# go
-  ];
+  ] ++
+	[
+		nixpkgs-vcv-rack.vcv-rack
+	];
 
 	fonts = {
 		enableDefaultPackages = true;
