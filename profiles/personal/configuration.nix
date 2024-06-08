@@ -37,7 +37,8 @@
   	driversi686Linux.amdvlk
 	];
 
-	environment.variables.VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+	# environment.variables.VK_ICD_FILENAMES = "/run/opengl-driver/share/vulkan/icd.d/radeon_icd.x86_64.json";
+	environment.variables.AMD_VULKAN_ICD = "RADV";
 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
