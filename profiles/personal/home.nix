@@ -278,7 +278,7 @@
 		enableZshIntegration = true;
     defaultCacheTtl = 60 * 60 * 6;
     defaultCacheTtlSsh = 60 * 60 * 6;
-    verbose = true;
+			verbose = true;
 
     # extraConfig = ''
     #   debug-pinentry
@@ -311,7 +311,7 @@
 	# programs.gh = {
 	# 	enable = true;
 	# 	gitCredentialHelper = {
-	# 		enable = true;
+		# 		enable = true;
 	# 		hosts = [
 	# 			"https://github.com"
 	# 			"https://gist.github.com"
@@ -327,80 +327,80 @@
 		enable = true;
 	};
 
-	# gtk = {
-	# 	enable = true;
-	# 	# theme.name = "Adwaita";
-	# 	# cursorTheme.name = "Vanilla-DMZ";
-	# 	iconTheme.name = "Papirus";
-	# };
+	gtk = {
+		enable = true;
+		# theme.name = "Adwaita";
+		# cursorTheme.name = "Vanilla-DMZ";
+		iconTheme.name = "Papirus";
+	};
 
   # `dconf dump /org/gnome/`
   # Another way to do this is to do `dconf watch /org/gnome` and then make the changes you want and then migrate them in as you see what they are.
-	# dconf.settings = {
-	# 	"org/gnome/desktop/interface" = {
-	# 		enable-hot-corners=false;
-	# 		enable-animations = false;
-	# 		color-scheme= "prefer-dark";
-	# 		# cursor-theme =
-	# 	};
-	# 	# "org/gnome/desktop/background" = {
-	# 	# 	picture-uri-dark="file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.webp";
-	# 	# };
-	# 	"org/gnome/desktop/wm/keybindings" = {
-	# 		close = [ "<Super>w" ];
-	# 		move-to-workspace-1=[ "<Shift><Super>1" ];
-	# 		move-to-workspace-2=[ "<Shift><Super>2" ];
-	# 		move-to-workspace-3=[ "<Shift><Super>3" ];
-	# 		move-to-workspace-4=[ "<Shift><Super>4" ];
-	# 		switch-applications=[ "<Alt>Tab" ];
-	# 		switch-applications-backward=[ "<Shift><Alt>Tab" ];
-	# 		switch-to-workspace-1=[ "<Super>1" ];
-	# 		switch-to-workspace-2=[ "<Super>2" ];
-	# 		switch-to-workspace-3=[ "<Super>3" ];
-	# 		switch-to-workspace-4=[ "<Super>4" ];
-	# 		switch-windows=[ "<Super>Tab" ];
-	# 		switch-windows-backward=[ "<Shift><Super>Tab" ];
-	# 		toggle-fullscreen=[ "F11" ];
-	# 		switch-to-workspace-left = [];
-	# 		switch-to-workspace-right = [];
-	# 	};
-	# 	# https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1250
-	# 	"org/gnome/shell/keybindings" = {
-	# 		switch-to-application-1 = [];
-	# 		switch-to-application-2 = [];
-	# 		switch-to-application-3 = [];
-	# 		switch-to-application-4 = [];
-	# 		switch-to-application-5 = [];
-	# 		switch-to-application-6 = [];
-	# 		switch-to-application-7 = [];
-	# 		switch-to-application-8 = [];
-	# 		switch-to-application-9 = [];
-	# 	};
-	# 	"org/gnome/desktop/search-providers" = {
-	# 		disabled=["org.gnome.clocks.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.Contacts.desktop" "org.gnome.Photos.desktop"];
-	# 		sort-order=[
-	# 			"org.gnome.Nautilus.desktop"
-	# 			"org.gnome.Settings.desktop"
-	# 			"org.gnome.Calendar.desktop"
-	# 			"org.gnome.Calculator.desktop"
-	# 			"org.gnome.Characters.desktop"
-	# 			"org.gnome.Photos.desktop"
-	# 			"org.gnome.clocks.desktop"
-	# 			"org.gnome.seahorse.Application.desktop"
-	# 			"org.gnome.Weather.desktop"
-	# 			"org.gnome.Contacts.desktop"
-	# 			"org.gnome.Documents.desktop"
-	# 		];
-	# 	};
-	# 	"org/gnome/settings-daemon/plugins/media-keys" = {
- #    	custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
- #  	};
- #  	"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-	# 		binding = "<Shift><Super>p";
-	# 		command = "tessen --pass=pass --dmenu=rofi --action=copy";
-	# 		name = "tessen";
-	# 	};
-	# };
+	dconf.settings = {
+		"org/gnome/desktop/interface" = {
+			enable-hot-corners=false;
+			enable-animations = false;
+			color-scheme= "prefer-dark";
+			# cursor-theme =
+		};
+		# "org/gnome/desktop/background" = {
+		# 	picture-uri-dark="file:///run/current-system/sw/share/backgrounds/gnome/adwaita-d.webp";
+		# };
+		"org/gnome/desktop/wm/keybindings" = {
+			close = [ "<Super>w" ];
+			move-to-workspace-1=[ "<Shift><Super>1" ];
+			move-to-workspace-2=[ "<Shift><Super>2" ];
+			move-to-workspace-3=[ "<Shift><Super>3" ];
+			move-to-workspace-4=[ "<Shift><Super>4" ];
+			switch-applications=[ "<Alt>Tab" ];
+			switch-applications-backward=[ "<Shift><Alt>Tab" ];
+			switch-to-workspace-1=[ "<Super>1" ];
+			switch-to-workspace-2=[ "<Super>2" ];
+			switch-to-workspace-3=[ "<Super>3" ];
+			switch-to-workspace-4=[ "<Super>4" ];
+			switch-windows=[ "<Super>Tab" ];
+			switch-windows-backward=[ "<Shift><Super>Tab" ];
+			toggle-fullscreen=[ "F11" ];
+			switch-to-workspace-left = [];
+			switch-to-workspace-right = [];
+		};
+		# https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/1250
+		"org/gnome/shell/keybindings" = {
+			switch-to-application-1 = [];
+			switch-to-application-2 = [];
+			switch-to-application-3 = [];
+			switch-to-application-4 = [];
+			switch-to-application-5 = [];
+			switch-to-application-6 = [];
+			switch-to-application-7 = [];
+			switch-to-application-8 = [];
+			switch-to-application-9 = [];
+		};
+		"org/gnome/desktop/search-providers" = {
+			disabled=["org.gnome.clocks.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.Contacts.desktop" "org.gnome.Photos.desktop"];
+			sort-order=[
+				"org.gnome.Nautilus.desktop"
+				"org.gnome.Settings.desktop"
+				"org.gnome.Calendar.desktop"
+				"org.gnome.Calculator.desktop"
+				"org.gnome.Characters.desktop"
+				"org.gnome.Photos.desktop"
+				"org.gnome.clocks.desktop"
+				"org.gnome.seahorse.Application.desktop"
+				"org.gnome.Weather.desktop"
+				"org.gnome.Contacts.desktop"
+				"org.gnome.Documents.desktop"
+			];
+		};
+		"org/gnome/settings-daemon/plugins/media-keys" = {
+    	custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+  	};
+  	"org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+			binding = "<Shift><Super>p";
+			command = "tessen --pass=pass --dmenu=rofi --action=copy";
+			name = "tessen";
+		};
+	};
 
 	xdg.userDirs = {
 		enable = true;
