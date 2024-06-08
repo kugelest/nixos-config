@@ -4,18 +4,6 @@
 
 { pkgs, lib, config, systemSettings, userSettings, inputs, ... }:
 
-let
-  nixpkgs-vcv-rack = import (builtins.fetchTree {
-    type = "github";
-    owner = "nixos";
-    repo = "nixpkgs";
-    rev = "d6cc5370a20d086397bf8e80ad5ece64af563761";     }) { inherit (pkgs) system; config = { allowUnfree = true; }; };
-
-	# old-vcv-rack = import nixpkgs-vcv-rack { };
-
-  # Specify the package you want to use from the old nixpkgs
-  old-vcv-rack = nixpkgs-vcv-rack.vcv-rack;
-in
 {
   imports = [
 		../../system/hardware-configuration.nix
@@ -269,7 +257,7 @@ in
 		mpv
 		zsh-completions
 		transmission
-		# vcv-rack
+		vcv-rack
 		usbutils
 		alsa-utils
 		unzip
@@ -295,7 +283,6 @@ in
 		thunderbird
 		feh
 		vulkan-tools
-		old-vcv-rack
 		# pkg-config
 		# go
   ];
