@@ -286,6 +286,7 @@
 		mesa
   	mesa-demos
 		glew
+		libGL
 		# pkg-config
 		# go
   ];
