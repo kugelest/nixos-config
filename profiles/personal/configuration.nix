@@ -54,6 +54,7 @@ in
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs-vcv-rack.config.allowUnfree = true;
 
 
     # Bootloader.
