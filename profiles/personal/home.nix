@@ -329,9 +329,9 @@
 
 	gtk = {
 		enable = true;
-		theme.name = "Adwaita";
+		# theme.name = "Adwaita";
 		# cursorTheme.name = "Vanilla-DMZ";
-		# iconTheme.name = "Papirus";
+		iconTheme.name = "Papirus";
 	};
 
   # `dconf dump /org/gnome/`
