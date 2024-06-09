@@ -289,6 +289,7 @@
 		glew
 		libGL
 		clinfo
+		gnome.zenity
 		cardinal
 		bespokesynth
 		# pkg-config
