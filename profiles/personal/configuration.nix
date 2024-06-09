@@ -288,6 +288,7 @@
   	mesa-demos
 		glew
 		libGL
+		clinfo
 		cardinal
 		bespokesynth
 		# pkg-config
