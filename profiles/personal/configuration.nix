@@ -295,6 +295,7 @@
 		vital
 		bitwig-studio
 		surge
+		lsp-plugins
 		# pkg-config
 		# go
   ];
