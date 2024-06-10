@@ -298,6 +298,7 @@
 		lsp-plugins
 		qjackctl
 		carla
+		raysession
 		# pkg-config
 		# go
   ];
