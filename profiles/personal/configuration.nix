@@ -293,6 +293,7 @@
 		cardinal
 		bespokesynth
 		vital
+		bitwig-studio
 		# pkg-config
 		# go
   ];
