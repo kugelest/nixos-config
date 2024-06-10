@@ -297,6 +297,7 @@
 		surge
 		lsp-plugins
 		qjackctl
+		carla
 		# pkg-config
 		# go
   ];
