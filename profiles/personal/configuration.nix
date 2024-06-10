@@ -294,6 +294,7 @@
 		bespokesynth
 		vital
 		bitwig-studio
+		surge
 		# pkg-config
 		# go
   ];
