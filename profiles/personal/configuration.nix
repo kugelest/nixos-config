@@ -292,6 +292,7 @@
 		gnome.zenity
 		cardinal
 		bespokesynth
+		vital
 		# pkg-config
 		# go
   ];
