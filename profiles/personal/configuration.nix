@@ -296,6 +296,7 @@
 		bitwig-studio
 		surge
 		lsp-plugins
+		qjackctl
 		# pkg-config
 		# go
   ];
